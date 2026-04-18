@@ -1,9 +1,10 @@
 categories = [
-    ["Food and Drinks", "Lunch", "Snacks", "Coffee"],
-    ["Transportation", "Bus", "Jeepney", "Ride-Share"],
-    ["Mobile/Internet", "Load", "Data", "Wifi top-up"],
-    ["School Supplies", "Notebook", "Pen", "Bond Paper"],
-    ["Entertainment", "Games", "Movie", "Hangout"]]
+    "Food and Drinks [e.g. Lunch, snacks, coffee]",
+    "Transportation [e.g. Bus, jeepney, ride-share]",
+    "Mobile/Internet [e.g. Load, data plan, WiFi top-up]",
+    "School Supplies [e.g. Notebook, pen, bond paper]",
+    "Entertainment [e.g. Games, movies, hangout]"
+]
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
@@ -15,14 +16,19 @@ print(" WEEKLY EXPENSE -- CATEGORIES ")
 print("==============================")
 
 for lists in range(5):
-    print(lists+1, "-", categories[lists][0], ",", categories[lists][1], ",", categories[lists][2], ",", categories[lists][3])
+    print(lists+1, "-", categories[lists])
 print("==============================")
 
-print("--- EXPENSE 1 ---")
-category1 = float(input("Category(0 to skip): "))
-
-print("--- EXPENSE 2 ---")
-category1 = float(input("Category(0 to skip): "))
-
-print("--- EXPENSE 3 ---")
-category1 = float(input("Category(0 to skip): "))
+for lists in range(4):
+    print(f"\nOrder {lists+1}")
+    listsno = int(input("What Category? (1-5 or 0 to skip): "))
+    
+    if listsno == 0:
+        continue
+    
+    if listsno < 1 or listsno > 5:
+        print("Invalid category! Please choose 1-5")
+        continue
+    
+    description = input("Description: ")
+    amount = int(input("Amount: "))
